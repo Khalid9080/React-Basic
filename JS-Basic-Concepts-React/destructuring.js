@@ -1,3 +1,4 @@
+// 
 
 
 // 1. array destructuring
@@ -17,4 +18,18 @@ function boxify(num1,num2){  //array destructuring
 console.log(x,y);
 console.log(r,t);
 
+cosnt [First,second] = boxify(23,45) //array destructuring
+
 console.log(boxify(23,45)); //array destructuring
+
+// Movies k destructuring korbo
+const student = {
+    name: 'Sakib',
+    age: 24,
+    movies: ['King Khan', 'Dhakar Mastan']
+};
+
+const [movie1, movie2]=['King Khan', 'Dhakar Mastan']
+const [movie3, movie4]=student.movies
+console.log(movie1, movie2);
+console.log(movie3, movie4);
