@@ -2,9 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css' 
-
+import Todo from './Todo' // Component Todo.jsx theke import kora hoise
+// import function from './Todo' 
+import Actor from './Actor'
 
 function App() {
+
+  const actors=['Tom Hanks', 'Tom Cruise', 'Tom Hardy', 'Tom Holland', 'Tom Felton']
+
   return (
     <> 
       
@@ -19,7 +24,19 @@ function App() {
           return(<h2>This Device is : {props.name} Price: {props.price}</h2>) 
       */}
 
+      
+      {/*---------- actors array ta k dynamically use korar system ----> */}
+      <Actor name={"Khalid Saifullah"}></Actor>
+      {
+        actors.map(actor =><Actor name={actor}></Actor>)
+      }
+
+
       {/* Declear/Import the Component */}
+      <Todo task="Learn React" isDone={true}></Todo>
+      <Todo task="Explorer Core concepts" isDone={false}></Todo> {/* Import from Todo.jsx*/}
+      <Todo task="Try JSX" isDone={true}></Todo>
+
       <Device name="Laptop" price="55,000 tk"></Device> {/*name="Laptop" price="55,000 tk" Egulo Comoponent er vitor as an object er property hishebe pass hobe. */}
       <Device name ="Mobile" price="14,000 tk"></Device> {/*Jar karone easely object er moto access kora jae  */}
       <Device name ="Watch" price="3,000 tk"></Device>
@@ -81,18 +98,18 @@ function Person(){ // component function er nam capital letter diye start korte 
 
 
 //Another Component
-function Student(props){
- console.log(props);
-  // JSX
-  return(
-    // External CSS - R1
-    <div className='student'> 
-      <h1>This is a Student</h1>
-      <p>Class: Khalid</p> 
-      <p>age: 23</p>
-    </div>
-  )
-}
+// function Student(props){
+//  console.log(props);
+//   // JSX
+//   return(
+//     // External CSS - R1
+//     <div className='student'> 
+//       <h1>This is a Student</h1>
+//       <p>Class: Khalid</p> 
+//       <p>age: 23</p>
+//     </div>
+//   )
+// }
 
 /*  -------- Destructuring props object -------------
 --> Things you need to know, 
@@ -110,10 +127,9 @@ function Student(props){
 
 */
 
-
 // Component
 const {grade, score}= {grade: '7', score: '99'}
-function Student({grade, score}){  
+function Student({grade, score=3}){  // destructuring props object , we can use default value also
  console.log(grade, score);
   // JSX
   return(
