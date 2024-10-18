@@ -5,30 +5,63 @@ import './App.css'
 import Todo from './Todo' // Component Todo.jsx theke import kora hoise
 // import function from './Todo' 
 import Actor from './Actor'
+import Product from './product'
+import BookStore from './BookStore'
 
-function App() {
 
-  const actors=['Tom Hanks', 'Tom Cruise', 'Tom Hardy', 'Tom Holland', 'Tom Felton']
+// import-> recieve
+// export-> send
+
+
+
+function App() { // root component
+
+
+const actors=['Tom Hanks', 'Tom Cruise', 'Tom Hardy', 'Tom Holland', 'Tom Felton']
+  
+const books=[
+  {id:1, name:'Harry Potter', author:'J.K Rowling'},
+  {id:2, name:'The Alchemist', author: 'Paulo Coelho'},
+  {id:3, name:'The Da Vinci Code', author: 'Dan Brown'},
+  {id:4, name:'The Kite Runner', author: 'Khaled Hosseini'},
+  {id:5, name:'The Hunger Games', author: 'Suzanne Collins'},
+  {id:6, name:'The Great Gatsby', author: 'F. Scott Fitzgerald'},
+]
+
+
+
+  // Array of Object 
+  const products=[
+    {id:1, name:'laptop', price:1400 }, 
+    {id:2, name: 'mobile', price:1500},
+    {id:3, name: 'watch', price:5000}, 
+    {id:4, name: 'camera', price:8000}, 
+    {id:5, name:'laptop', price:1900},
+  
+  ]
 
   return (
     <> 
       
       <h1>Vite + React</h1>
 
-      {/*  -------------Dynamically Object Declearation ------------- 
+    <BookStore boi={books}></BookStore>
 
-      --> Amra Componenet Declear korar shomoy Object er property gulo assign kore dite pari. 
-          like: <Device name="Laptop" price="55,000 tk"></Device>
-      --> Conmponent er vitor just ekta variable name dite hobe. oitake dhore access korte parbe. 
-          like: function Device(props) 
-          return(<h2>This Device is : {props.name} Price: {props.price}</h2>) 
-      */}
 
+
+
+      {/* -------- products array of object k dynamically use korar system ------------*/}
+      {
+        products.map(prdct=><Product product={prdct}></Product>)
+      }
       
+
+
+
       {/*---------- actors array ta k dynamically use korar system ----> */}
       <Actor name={"Khalid Saifullah"}></Actor>
       {
-        actors.map(actor =><Actor name={actor}></Actor>)
+        actors.map(actor =><Actor name={actor}></Actor>) // map() array er shobgulo element k ekshat kore kisu ekta return kore.
       }
 
 
@@ -36,6 +69,16 @@ function App() {
       <Todo task="Learn React" isDone={true}></Todo>
       <Todo task="Explorer Core concepts" isDone={false}></Todo> {/* Import from Todo.jsx*/}
       <Todo task="Try JSX" isDone={true}></Todo>
+
+
+{/*  -------------Dynamically Object Declearation ------------- 
+
+      --> Amra Componenet Declear korar shomoy Object er property gulo assign kore dite pari. 
+          like: <Device name="Laptop" price="55,000 tk"></Device>
+      --> Conmponent er vitor just ekta variable name dite hobe. oitake dhore access korte parbe. 
+          like: function Device(props) 
+          return(<h2>This Device is : {props.name} Price: {props.price}</h2>) 
+      */}
 
       <Device name="Laptop" price="55,000 tk"></Device> {/*name="Laptop" price="55,000 tk" Egulo Comoponent er vitor as an object er property hishebe pass hobe. */}
       <Device name ="Mobile" price="14,000 tk"></Device> {/*Jar karone easely object er moto access kora jae  */}
