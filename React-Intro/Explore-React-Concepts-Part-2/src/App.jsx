@@ -1,5 +1,11 @@
 
 import './App.css'
+import Counter from './State_Management';
+import Team from './Team';
+import Users from './Users';
+import Firends from './Friends';
+
+
 
 // T1- Event handler
 
@@ -19,7 +25,13 @@ function App() {
 
   return (
     <>
-      
+    <Firends></Firends>
+    
+    <Users></Users>
+
+    <Team></Team>
+
+    <Counter></Counter>
     {/* T1- Event handler
     --> onclick event handler korar jonno onClick attribute use kora hoy.
     --> onClick attribute er moddhe function call kora hoy. like: onClick={handleClick}
