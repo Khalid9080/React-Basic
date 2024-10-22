@@ -30,6 +30,10 @@ const Countries = () => {
         setFlags(newVisitedFlags);
     }
 
+    //remove item from an array in a state
+    // --> use filter kore, jare bad dite cai ore remove kore die baki gulore nie state a set korte hobe.
+
+
 /* S
    --> 1. Amra prottek Mark Visited Button a click korle, Country gulo page a list akare show korte cai. er jonno handleVisitedCountry name ekta arrow function declear kora hoise.
    --> 2. er jonno, 2nd step holo, Coutries.jsx er vitor ekta massage likha jate eta console a ekta masg show korae.
@@ -67,7 +71,7 @@ const Countries = () => {
 
             <div className="flag-container">
                 {
-                    flags.map(flag => <img src={flag} alt="" />)
+                    flags.map((flag, index )=> <img key={index} src={flag} alt="" />)
                 }
 
             </div>
