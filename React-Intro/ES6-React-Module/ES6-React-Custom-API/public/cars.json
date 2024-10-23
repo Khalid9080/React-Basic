@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "Toyota Camry",
+      "price": 24000
+    },
+    {
+      "id": 2,
+      "name": "Honda Civic",
+      "price": 22000
+    },
+    {
+      "id": 3,
+      "name": "Ford Mustang",
+      "price": 35000
+    },
+    {
+      "id": 4,
+      "name": "Chevrolet Silverado",
+      "price": 29000
+    },
+    {
+      "id": 5,
+      "name": "Tesla Model 3",
+      "price": 45000
+    }
+  ]
+  
